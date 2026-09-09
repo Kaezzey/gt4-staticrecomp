@@ -4,15 +4,6 @@ A learning-first, GT4-specific static recompilation project targeting C++20
 and Windows x86-64. The intended result translates the selected game's R5900
 code ahead of time and supplies the PS2 services that execution requires.
 
-Current scope: M0 build skeleton. No instruction decoder, game execution,
-executable reconstruction, or rendering is implemented. Understanding remains
-part of milestone acceptance; a passing build alone does not complete it.
-
-Start with [requirements and roadmap](docs/requirements.md),
-[environment audit](docs/environment.md), and the [M0 lesson](docs/lessons/m0.md).
-The [input record](docs/reverse-engineering/input-identity.md) records the ISO
-fingerprint, owner-confirmed USA v2.00 target, and reported GT4Hooks compatibility.
-
 ## Build
 
 Use an x64 Visual Studio Developer PowerShell with MSVC, the Windows SDK,
