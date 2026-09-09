@@ -1,0 +1,19 @@
+# Local game data, BIOS, captures, and derivative output.
+/private/
+/generated/
+*.iso
+*.ISO
+*.chd
+*.cso
+CORE.GT4
+*.elf
+*.ELF
+
+# Build products and local editor configuration.
+/build/
+/build-*/
+/out/
+/.vs/
+CMakeUserPresets.json
+__pycache__/
+*.pyc
