@@ -14,6 +14,5 @@ decoded operations at runtime; it will be useful for validation but is not the
 intended final execution path for known GT4 code.
 
 This pipeline is a design target derived from the charter, not implemented
-functionality. The next lesson will establish the EE/IOP/VU/GS responsibilities
-before inspecting executable packaging. Detailed hardware claims and diagrams
-will be sourced and tested as the relevant subsystem is introduced.
+functionality. Start the [M1 PS2 overview](ps2-overview.md) for EE/IOP/VU/GS
+responsibilities, diagrams, a worked example and checkpoint questions.

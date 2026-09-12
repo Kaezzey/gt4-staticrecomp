@@ -4,9 +4,13 @@ A learning-first, GT4-specific static recompilation project targeting C++20
 and Windows x86-64. The intended result translates the selected game's R5900
 code ahead of time and supplies the PS2 services that execution requires.
 
-Current scope: M0 build skeleton. No instruction decoder, game execution,
-executable reconstruction, or rendering is implemented. Understanding remains
-part of milestone acceptance; a passing build alone does not complete it.
+M0 build skeleton and tutoring are accepted (2026-09-13).
+[M1 architecture tutoring](docs/architecture/ps2-overview.md) is in progress.
+[M2 input fingerprinting](docs/lessons/m2.md) is implemented and verified for
+USA v2.00 (`SCUS-97328`); its tutoring checkpoint is pending. Proceeding with
+M2 alongside M1 tutoring was explicitly requested by the owner.
+No instruction decoder, game execution, executable reconstruction, or rendering
+is implemented.
 
 Start with [requirements and roadmap](docs/requirements.md),
 [environment audit](docs/environment.md), and the [M0 lesson](docs/lessons/m0.md).
@@ -26,6 +30,18 @@ ctest --test-dir build --output-on-failure
 ```
 
 The test validates the build/link/test wiring only. It proves no PS2 behavior.
+
+## Verify the selected disc
+
+The [M2 lesson](docs/lessons/m2.md) includes Python environment setup and the
+12 standalone synthetic tests. With that environment available:
+
+```powershell
+& '.\private\tooling-venv\Scripts\python.exe' scripts/gt4disc.py verify 'iso/Gran Turismo 4 (USA) (v2.00).iso'
+```
+
+The [pinned manifest](docs/inputs/usa-v2.00.json) contains sizes, hashes and
+metadata only. Verification fails on changed input and never updates it.
 
 ## Local data and source control
 

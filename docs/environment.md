@@ -44,3 +44,10 @@ Enter-VsDevShell -VsInstallPath 'C:/Program Files (x86)/Microsoft Visual Studio/
 
 Then use the README build commands. If a failed configure already created a
 cache, add `--fresh` to the configure command once.
+
+## M2 tooling update — 2026-09-13
+
+Created ignored `private/tooling-venv/` using the existing Python 3.14.3 and
+installed pycdlib 1.20.0 there for ISO observation. The package is pinned in
+`scripts/requirements.txt`. This does not change global Python or the C++ build.
+12 standalone Python tests and real-disc manifest verification passed.

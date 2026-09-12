@@ -1,0 +1,27 @@
+{
+  "disc": {
+    "sha256": "67b6c0075837f3ae1132d608acf2858bf13b2dd62d6eae83dff76df02e4e824f",
+    "size_bytes": 5314478080
+  },
+  "files": {
+    "/CORE.GT4;1": {
+      "sha256": "85d26aa8430154967b2633eede929286694ac39e99762527edcec365fd642ff9",
+      "size_bytes": 2020861
+    },
+    "/SCUS_973.28;1": {
+      "sha256": "f8f10823160e2b5cef5c7032628134632b291b1df87a9aee3c144794dd8019fa",
+      "size_bytes": 273020
+    },
+    "/SYSTEM.CNF;1": {
+      "sha256": "7bb2979e21efc32977f7a47fd28618c659994ee6e5a9272da5e258695b22f2c0",
+      "size_bytes": 57
+    }
+  },
+  "schema_version": 1,
+  "system": {
+    "boot_path": "/SCUS_973.28;1",
+    "serial": "SCUS-97328",
+    "version": "2.00",
+    "video_mode": "NTSC"
+  }
+}

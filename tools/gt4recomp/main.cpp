@@ -3,6 +3,5 @@
 #include <iostream>
 
 int main() {
-    std::cout << gt4recomp::project_name()
-              << ": learning laboratory; no guest execution implemented.\n";
+    std::cout << gt4recomp::project_name() << ": learning laboratory; no guest execution implemented.\n";
 }
