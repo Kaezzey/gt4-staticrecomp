@@ -1,0 +1,74 @@
+{
+  "entry_address": 1048584,
+  "inflated_size": 6119116,
+  "inflated_sha256": "9b39d113bdd5c318421aa773d52871b6216c5c9bc736baee0693da0a73253adf",
+  "reference_size": 6127896,
+  "reference_sha256": "94aada8984999736f14a121ea1bd543e72d9d59b801e513716a32d8991746222",
+  "records": [
+    {
+      "record_index": 0,
+      "inflated_payload_offset": 276,
+      "core_target_address": 6388220,
+      "size_bytes": 24,
+      "payload_sha256": "349df08c5c2c7eeca9e680b3e7caef8e8e7d0ab355482a15f9358c3db9f6a297",
+      "reference_program_header": {
+        "type": 1879048192,
+        "file_offset": 5345280,
+        "virtual_address": 6388244,
+        "physical_address": 6388244,
+        "file_size": 24,
+        "memory_size": 24,
+        "flags": 4,
+        "alignment": 4
+      },
+      "address_delta": 24,
+      "all_payload_bytes_match": true
+    },
+    {
+      "record_index": 1,
+      "inflated_payload_offset": 308,
+      "core_target_address": 1048576,
+      "size_bytes": 5339668,
+      "payload_sha256": "5a9a9107b146b7d533a2a2421cdf900a913d5ced4e97892798cfa810b3dd2d34",
+      "reference_program_header": {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 1048576,
+        "physical_address": 1048576,
+        "file_size": 5339668,
+        "memory_size": 5339668,
+        "flags": 7,
+        "alignment": 4096
+      },
+      "address_delta": 0,
+      "all_payload_bytes_match": true
+    },
+    {
+      "record_index": 2,
+      "inflated_payload_offset": 5339984,
+      "core_target_address": 6388352,
+      "size_bytes": 779132,
+      "payload_sha256": "00b5074cff3919abb4495e7778d556d0f01cc265ce74977818b744fab028b09d",
+      "reference_program_header": {
+        "type": 1,
+        "file_offset": 5345536,
+        "virtual_address": 6388352,
+        "physical_address": 6388352,
+        "file_size": 779132,
+        "memory_size": 9167740,
+        "flags": 6,
+        "alignment": 4096
+      },
+      "address_delta": 0,
+      "all_payload_bytes_match": true
+    }
+  ],
+  "reference_tool": {
+    "release": "elfbuilder-1.0.0",
+    "source_tag_commit_prefix": "addbdf4",
+    "download_url": "https://github.com/Nenkai/PDTools/releases/download/elfbuilder-1.0.0/PDTools.GT4ElfBuilderTool.exe.zip",
+    "archive_sha256": "c7d76dcbaf58abfcdb421bf9b0c01dd4562fa070d534f2773487e69303115316",
+    "executable_sha256": "e9dca65eee27fafbc0b518a27bc081f101100ca1e0812a0a7c197b6c72f77033",
+    "runtime": "DOTNET_ROLL_FORWARD=Major; installed .NET 8/9 runtimes; .NET 6 absent"
+  }
+}

@@ -35,7 +35,7 @@ explicitly retains responsibility for all commits.
 | M0 | Core library, CLI, CMake/CTest, ignore rules, documentation; build and test from a fresh build directory | Accepted 2026-09-13: build verified; owner reports Luna tutoring passed |
 | M1 | PS2 architecture lesson; explain EE, IOP, VU, GS and data movement | Guide prepared; Luna tutoring in progress; owner authorized M2 concurrently |
 | M2 | One revision record, file sizes and SHA-256; repeatable comparison rejects changed input | BUILD/VERIFY passed 2026-09-13: manifest, verifier, 12 tests and real-input comparisons; EXPLAIN pending |
-| M3 | Reference reconstruction from the selected CORE; map file bytes to loaded addresses and inspect independently | Pending exact input and reconstruction compatibility |
+| M3 | Reference reconstruction from the selected CORE; map file bytes to loaded addresses and inspect independently | BUILD/VERIFY passed: repeatable ELF, 3/3 payloads match, Ghidra byte import verified; EXPLAIN pending; reference layout caveats recorded |
 | M4 | Own image reconstruction; compare loaded bytes, addresses, zero-fill, entry point | Pending M3 evidence |
 | M5-M8 | Decoder/disassembler, basic blocks (straight-line instruction regions), control-flow graph and evidence-backed function map | Pending |
 | M9-M12 | Guest state/memory, small test interpreter, generated straight-line and branching synthetic programs | Pending |
@@ -52,8 +52,9 @@ These are an evidence-driven curriculum, not an estimated delivery schedule.
 - Target is USA v2.00, confirmed by the owner and SYSTEM.CNF VER metadata.
   Serial SCUS-97328 and input hashes are recorded in `docs/inputs/usa-v2.00.json`.
   Do not transplant Online US addresses.
-- Establish which reconstruction tool/version supports this retail input.
-  The owner reports being told USA v2.00 works with GT4Hooks; local testing is pending.
+- PDTools elfbuilder-1.0.0 reconstructs this CORE; full GT4Hooks injection/runtime
+  compatibility is untested. M4 must resolve or explicitly scope the reference's
+  synthetic BSS, reginfo shift and alignment discrepancy.
 - Verify an R5900-capable Ghidra analysis setup using sample encodings;
   generic MIPS support alone does not prove EE extension coverage.
 - Locate/install observation tools and validate PCSX2 register/memory capture

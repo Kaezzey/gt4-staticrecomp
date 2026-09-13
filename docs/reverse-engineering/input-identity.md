@@ -11,7 +11,7 @@ Observed locally on 2026-09-09; no disc payload was copied or uploaded.
 | Disc serial / boot executable | `SCUS-97328`, normalized from `SCUS_973.28` in the disc's BOOT2 field |
 | CORE.GT4 size/hash | 2,020,861 bytes; `85d26aa8430154967b2633eede929286694ac39e99762527edcec365fd642ff9` |
 | Target selection | GT4 USA v2.00 |
-| GT4Hooks compatibility | Owner reports being told USA v2.00 works with GT4Hooks; not tested locally yet |
+| GT4Hooks compatibility | Owner reports compatibility; the referenced ELF builder works on this CORE (M3). Hooks/injection/runtime remain untested. |
 
 The ISO hash was first computed with PowerShell on 2026-09-09 and matched by
 Python inspection and a separate verification run on 2026-09-13. Disc metadata
@@ -34,5 +34,5 @@ environment are confirmed ignored. The manifest contains metadata only.
 
 The ISO library performed file location/extraction for both contained-file
 checks; this validates hashing independently, not two independent filesystem
-parsers. No reconstructed executable, GT4 address map, or GT4Hooks compatibility
-has been established. See the [M2 lesson](../lessons/m2.md) for limits and tests.
+parsers. M3 now provides a [reference executable and layout comparison](../lessons/m3.md).
+No game-function map or full GT4Hooks runtime compatibility has been established.

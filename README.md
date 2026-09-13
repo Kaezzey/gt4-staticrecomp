@@ -6,6 +6,11 @@ code ahead of time and supplies the PS2 services that execution requires.
 
 ## Build
 
+M3 now provides a [reference executable and layout comparison](docs/lessons/m3.md).
+All three CORE payloads match, and Ghidra imports both loadable segments
+byte-for-byte. Tutoring remains pending; our own reconstruction is the next
+milestone. The reference has documented layout and decoding limitations.
+
 Use an x64 Visual Studio Developer PowerShell with MSVC, the Windows SDK,
 CMake (3.24+), and Ninja available. No downloaded dependencies are required.
 
