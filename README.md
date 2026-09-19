@@ -6,6 +6,11 @@ code ahead of time and supplies the PS2 services that execution requires.
 
 ## Build
 
+[M5 instruction decoding](docs/lessons/m5.md) now recognizes sixteen starter
+EE operations, preserves their fields and explicitly reports unsupported words.
+All four CTest tests pass; Ghidra independently checked samples of every supported
+operation. The lesson includes worked examples and the pending tutoring checkpoint.
+
 [M4 native reconstruction](docs/lessons/m4.md) now reads the pinned CORE into
 our own C++ executable-image model and writes an analysis ELF. All three payloads,
 entry and declared memory ranges match the M3 reference policy; alignment is
@@ -28,7 +33,8 @@ For an offline configure, append
 `-DGT4_ZLIB_ARCHIVE=C:/absolute/path/to/zlib-1.3.1.tar.gz` to the configure command.
 The archive is still hash-checked. This workspace has a copy under
 `private/dependencies/`. CTest now covers image reconstruction and ELF output as
-well as the original build smoke checks; no tests establish CPU execution yet.
+well as instruction decoding and the original build smoke checks; no tests
+establish CPU execution yet.
 
 ## Reconstruct an analysis ELF
 

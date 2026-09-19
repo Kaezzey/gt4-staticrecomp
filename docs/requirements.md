@@ -37,7 +37,8 @@ explicitly retains responsibility for all commits.
 | M2 | One revision record, file sizes and SHA-256; repeatable comparison rejects changed input | BUILD/VERIFY passed 2026-09-13: manifest, verifier, 12 tests and real-input comparisons; EXPLAIN pending |
 | M3 | Reference reconstruction from the selected CORE; map file bytes to loaded addresses and inspect independently | BUILD/VERIFY passed: repeatable ELF, 3/3 payloads match, Ghidra byte import verified; EXPLAIN pending; reference layout caveats recorded |
 | M4 | Own image reconstruction; compare loaded bytes, addresses, zero-fill, entry point | BUILD/VERIFY passed 2026-09-19 for explicit reference analysis policy: native C++, payload/layout comparisons and Ghidra zero-fill verification; EXPLAIN pending; runtime BSS remains unresolved |
-| M5-M8 | Decoder/disassembler, basic blocks (straight-line instruction regions), control-flow graph and evidence-backed function map | Pending |
+| M5 | Small instruction decoder with explicit unsupported results | BUILD/VERIFY passed 2026-09-19: 16 operations, 33 hand-selected words, negative/unsupported cases and independent Ghidra comparisons; EXPLAIN pending |
+| M6-M8 | Disassembler, basic blocks (straight-line instruction regions), control-flow graph and evidence-backed function map | Pending |
 | M9-M12 | Guest state/memory, small test interpreter, generated straight-line and branching synthetic programs | Pending |
 | M13 | One real GT4 function compiled natively; at least five valid input states match relevant registers, touched memory, writes and continuation | First major technical landmark |
 

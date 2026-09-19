@@ -18,6 +18,11 @@ target_include_directories(gt4recomp_core PUBLIC include)
 target_compile_features(gt4recomp_core PUBLIC cxx_std_20)
 set_target_properties(gt4recomp_core PROPERTIES CXX_EXTENSIONS OFF)
 
+add_library(gt4recomp_decode STATIC src/ee/decode.cpp)
+target_include_directories(gt4recomp_decode PUBLIC include)
+target_compile_features(gt4recomp_decode PUBLIC cxx_std_20)
+set_target_properties(gt4recomp_decode PROPERTIES CXX_EXTENSIONS OFF)
+
 add_library(gt4recomp_executable STATIC
     src/executable/core_image.cpp
     src/executable/analysis_elf.cpp
@@ -39,6 +44,9 @@ target_link_libraries(gt4recomp PRIVATE gt4recomp_core)
 
 include(CTest)
 if(BUILD_TESTING)
+    add_executable(ee_decode_tests tests/unit/ee_decode_test.cpp)
+    target_link_libraries(ee_decode_tests PRIVATE gt4recomp_decode)
+    add_test(NAME ee_decode COMMAND ee_decode_tests)
     add_executable(gt4recomp_tests tests/unit/project_test.cpp)
     target_link_libraries(gt4recomp_tests PRIVATE gt4recomp_core)
     add_test(NAME project_identity COMMAND gt4recomp_tests)
