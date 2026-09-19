@@ -1,0 +1,75 @@
+{
+  "entry_address": 1048584,
+  "native_elf_size": 6123004,
+  "native_elf_sha256": "10f82e2231a51404b95682ed3ea81171100a1af2fefdeed3391943016c7c935c",
+  "reference_elf_sha256": "94aada8984999736f14a121ea1bd543e72d9d59b801e513716a32d8991746222",
+  "payload_records_matched": 3,
+  "loaded_layout_matches_reference_policy": true,
+  "native_alignment_valid": true,
+  "zero_fill_ranges": [
+    {
+      "start": 7167484,
+      "end_exclusive": 15556092,
+      "evidence": "reference analysis policy; real runtime extent unverified"
+    }
+  ],
+  "records": [
+    {
+      "record_index": 0,
+      "inflated_payload_offset": 276,
+      "core_target_address": 6388220,
+      "size_bytes": 24,
+      "payload_sha256": "349df08c5c2c7eeca9e680b3e7caef8e8e7d0ab355482a15f9358c3db9f6a297",
+      "reference_program_header": {
+        "type": 1879048192,
+        "file_offset": 5343764,
+        "virtual_address": 6388244,
+        "physical_address": 6388244,
+        "file_size": 24,
+        "memory_size": 24,
+        "flags": 4,
+        "alignment": 4
+      },
+      "address_delta": 24,
+      "all_payload_bytes_match": true
+    },
+    {
+      "record_index": 1,
+      "inflated_payload_offset": 308,
+      "core_target_address": 1048576,
+      "size_bytes": 5339668,
+      "payload_sha256": "5a9a9107b146b7d533a2a2421cdf900a913d5ced4e97892798cfa810b3dd2d34",
+      "reference_program_header": {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 1048576,
+        "physical_address": 1048576,
+        "file_size": 5339668,
+        "memory_size": 5339668,
+        "flags": 7,
+        "alignment": 4096
+      },
+      "address_delta": 0,
+      "all_payload_bytes_match": true
+    },
+    {
+      "record_index": 2,
+      "inflated_payload_offset": 5339984,
+      "core_target_address": 6388352,
+      "size_bytes": 779132,
+      "payload_sha256": "00b5074cff3919abb4495e7778d556d0f01cc265ce74977818b744fab028b09d",
+      "reference_program_header": {
+        "type": 1,
+        "file_offset": 5343872,
+        "virtual_address": 6388352,
+        "physical_address": 6388352,
+        "file_size": 779132,
+        "memory_size": 9167740,
+        "flags": 6,
+        "alignment": 4096
+      },
+      "address_delta": 0,
+      "all_payload_bytes_match": true
+    }
+  ]
+}

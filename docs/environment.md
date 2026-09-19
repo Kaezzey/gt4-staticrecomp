@@ -1,5 +1,12 @@
 # Environment audit — 2026-09-09
 
+Latest implementation update: M4 on 2026-09-19 adds native zlib 1.3.1 via
+hash-pinned CMake FetchContent. The archive can be supplied offline with
+GT4_ZLIB_ARCHIVE; sources/build products stay in ignored build directories.
+MSVC Debug build, 3 CTest entries and 24 Python tests pass locally. Ghidra 12.1.3
+imports our native analysis ELF and verifies payloads/zero-fill. Its temporary
+project location and remaining R5900 decoding limitation are in the M4 lesson.
+
 | Component | Observed result |
 | --- | --- |
 | Git | 2.51.0.windows.1; workspace initially had no `.git` repository |

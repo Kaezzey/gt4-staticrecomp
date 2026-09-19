@@ -6,13 +6,16 @@ code ahead of time and supplies the PS2 services that execution requires.
 
 ## Build
 
-M3 now provides a [reference executable and layout comparison](docs/lessons/m3.md).
-All three CORE payloads match, and Ghidra imports both loadable segments
-byte-for-byte. Tutoring remains pending; our own reconstruction is the next
-milestone. The reference has documented layout and decoding limitations.
+[M4 native reconstruction](docs/lessons/m4.md) now reads the pinned CORE into
+our own C++ executable-image model and writes an analysis ELF. All three payloads,
+entry and declared memory ranges match the M3 reference policy; alignment is
+corrected. Ghidra verified imported payloads and the declared zero-fill range.
+Tutoring remains pending. This is analysis output, not a verified bootable port.
 
 Use an x64 Visual Studio Developer PowerShell with MSVC, the Windows SDK,
-CMake (3.24+), and Ninja available. No downloaded dependencies are required.
+CMake (3.24+), and Ninja available. The first configure downloads hash-pinned
+zlib 1.3.1 into the ignored build directory. No PS2 runtime or reference builder
+is needed by our native reconstruction path.
 
 ```powershell
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=cl
@@ -21,7 +24,24 @@ ctest --test-dir build --output-on-failure
 .\build\gt4recomp.exe
 ```
 
-The test validates the build/link/test wiring only. It proves no PS2 behavior.
+For an offline configure, append
+`-DGT4_ZLIB_ARCHIVE=C:/absolute/path/to/zlib-1.3.1.tar.gz` to the configure command.
+The archive is still hash-checked. This workspace has a copy under
+`private/dependencies/`. CTest now covers image reconstruction and ELF output as
+well as the original build smoke checks; no tests establish CPU execution yet.
+
+## Reconstruct an analysis ELF
+
+With the verified CORE copy from M2:
+
+```powershell
+New-Item -ItemType Directory -Force private/reconstructed | Out-Null
+.\build\gt4core.exe --reference-analysis private/fingerprint-check/CORE.GT4 private/reconstructed/SCUS_973.28.elf
+```
+
+The output must not already exist. The explicit flag adopts the M3 builder's
+unproven BSS/reginfo choices for analysis only. See the [M4 lesson](docs/lessons/m4.md)
+for the implementation walkthrough, comparison commands and limitations.
 
 ## Verify the selected disc
 

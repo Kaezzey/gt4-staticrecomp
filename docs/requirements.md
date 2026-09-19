@@ -36,7 +36,7 @@ explicitly retains responsibility for all commits.
 | M1 | PS2 architecture lesson; explain EE, IOP, VU, GS and data movement | Guide prepared; Luna tutoring in progress; owner authorized M2 concurrently |
 | M2 | One revision record, file sizes and SHA-256; repeatable comparison rejects changed input | BUILD/VERIFY passed 2026-09-13: manifest, verifier, 12 tests and real-input comparisons; EXPLAIN pending |
 | M3 | Reference reconstruction from the selected CORE; map file bytes to loaded addresses and inspect independently | BUILD/VERIFY passed: repeatable ELF, 3/3 payloads match, Ghidra byte import verified; EXPLAIN pending; reference layout caveats recorded |
-| M4 | Own image reconstruction; compare loaded bytes, addresses, zero-fill, entry point | Pending M3 evidence |
+| M4 | Own image reconstruction; compare loaded bytes, addresses, zero-fill, entry point | BUILD/VERIFY passed 2026-09-19 for explicit reference analysis policy: native C++, payload/layout comparisons and Ghidra zero-fill verification; EXPLAIN pending; runtime BSS remains unresolved |
 | M5-M8 | Decoder/disassembler, basic blocks (straight-line instruction regions), control-flow graph and evidence-backed function map | Pending |
 | M9-M12 | Guest state/memory, small test interpreter, generated straight-line and branching synthetic programs | Pending |
 | M13 | One real GT4 function compiled natively; at least five valid input states match relevant registers, touched memory, writes and continuation | First major technical landmark |
@@ -53,8 +53,9 @@ These are an evidence-driven curriculum, not an estimated delivery schedule.
   Serial SCUS-97328 and input hashes are recorded in `docs/inputs/usa-v2.00.json`.
   Do not transplant Online US addresses.
 - PDTools elfbuilder-1.0.0 reconstructs this CORE; full GT4Hooks injection/runtime
-  compatibility is untested. M4 must resolve or explicitly scope the reference's
-  synthetic BSS, reginfo shift and alignment discrepancy.
+  compatibility is untested. M4 explicitly scopes synthetic BSS/reginfo to an
+  opt-in analysis policy and fixes ELF alignment. Runtime initialization still
+  requires original-loader or dynamic evidence.
 - Verify an R5900-capable Ghidra analysis setup using sample encodings;
   generic MIPS support alone does not prove EE extension coverage.
 - Locate/install observation tools and validate PCSX2 register/memory capture
