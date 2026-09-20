@@ -6,10 +6,11 @@ code ahead of time and supplies the PS2 services that execution requires.
 
 ## Build
 
-[M5 instruction decoding](docs/lessons/m5.md) now recognizes sixteen starter
-EE operations, preserves their fields and explicitly reports unsupported words.
-All four CTest tests pass; Ghidra independently checked samples of every supported
-operation. The lesson includes worked examples and the pending tutoring checkpoint.
+[M6 disassembly](docs/reverse-engineering/m6-disassembly.md) adds `gt4disasm` for
+selected real GT4 ranges. Ten regions were inspected: 311 supported words match
+Ghidra (246 non-NOP), while 177 remain explicitly unsupported. The decoder now
+supports eighteen operations, including ANDI/ORI. All five CTest tests and 28
+Python tests passed. Tutoring remains pending; see the local [M6 lesson](docs/lessons/m6.md).
 
 [M4 native reconstruction](docs/lessons/m4.md) now reads the pinned CORE into
 our own C++ executable-image model and writes an analysis ELF. All three payloads,
@@ -35,6 +36,18 @@ The archive is still hash-checked. This workspace has a copy under
 `private/dependencies/`. CTest now covers image reconstruction and ELF output as
 well as instruction decoding and the original build smoke checks; no tests
 establish CPU execution yet.
+
+## Disassemble a selected region
+
+```powershell
+.\build\gt4disasm.exe private/fingerprint-check/CORE.GT4 0x10011c 31
+python scripts/sample_disassembly.py
+```
+
+The count is instructions. The CLI prints the listing to stdout and unsupported
+opcode counts to stderr. The script saves ten selected regions under ignored
+`private/disassembly/`; it needs only standard Python. See the
+[M6 evidence](docs/reverse-engineering/m6-disassembly.md) for Ghidra comparison commands.
 
 ## Reconstruct an analysis ELF
 

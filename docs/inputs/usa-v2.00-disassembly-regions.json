@@ -1,0 +1,17 @@
+{
+  "core_sha256": "85d26aa8430154967b2633eede929286694ac39e99762527edcec365fd642ff9",
+  "native_elf_sha256": "10f82e2231a51404b95682ed3ea81171100a1af2fefdeed3391943016c7c935c",
+  "selection": "Manually selected entry/startup ranges and direct transfer destinations observed in startup. Ranges are inspection windows, not asserted function extents or semantic names.",
+  "regions": [
+    {"start": "0x00100008", "count": 69, "evidence": "Pinned image entry; initial straight-line startup window"},
+    {"start": "0x0010011c", "count": 31, "evidence": "Continuation of entry; address setup and backward branches"},
+    {"start": "0x00100198", "count": 20, "evidence": "Startup continuation after branch loops"},
+    {"start": "0x001001e8", "count": 16, "evidence": "Startup direct calls and outgoing jumps"},
+    {"start": "0x00100228", "count": 32, "evidence": "Address constructed by LUI/ADDIU at 0x001001a8/0x001001bc; code-like continuation, role unconfirmed"},
+    {"start": "0x005b7560", "count": 64, "evidence": "JAL destination at 0x001001e8"},
+    {"start": "0x005adf20", "count": 64, "evidence": "JAL destination at 0x001001f0"},
+    {"start": "0x0048ef90", "count": 64, "evidence": "JAL destination at 0x001001fc"},
+    {"start": "0x00107f08", "count": 64, "evidence": "JAL destination at 0x00100210"},
+    {"start": "0x005a3140", "count": 64, "evidence": "J destination at 0x00100218"}
+  ]
+}

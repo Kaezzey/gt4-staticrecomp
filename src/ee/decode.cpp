@@ -66,6 +66,8 @@ DecodedInstruction decode(std::uint32_t word) {
     case 0x04: result.operation = Operation::Beq; break;
     case 0x05: result.operation = Operation::Bne; break;
     case 0x09: result.operation = Operation::Addiu; break;
+    case 0x0c: result.operation = Operation::Andi; break;
+    case 0x0d: result.operation = Operation::Ori; break;
     case 0x0f:
         if (result.rs == 0) {
             result.operation = Operation::Lui;
@@ -81,6 +83,8 @@ DecodedInstruction decode(std::uint32_t word) {
 std::string_view mnemonic(Operation operation) {
     switch (operation) {
     case Operation::Addiu: return "addiu";
+    case Operation::Andi: return "andi";
+    case Operation::Ori: return "ori";
     case Operation::Addu: return "addu";
     case Operation::Subu: return "subu";
     case Operation::And: return "and";

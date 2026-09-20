@@ -9,7 +9,7 @@ namespace gt4recomp::ee {
 enum class Operation {
     Unsupported,
     Addiu, Addu, Subu, And, Or, Xor, Lui, Lw, Sw,
-    Beq, Bne, J, Jal, Jr, Sll, Srl
+    Beq, Bne, J, Jal, Jr, Sll, Srl, Andi, Ori
 };
 
 // These are overlapping views of the encoded bits, not a list of operands.

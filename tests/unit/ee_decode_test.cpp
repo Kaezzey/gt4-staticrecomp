@@ -59,6 +59,10 @@ int main() {
         std::int32_t signed_value;
     };
     const ImmediateCase immediate_cases[] = {
+        {0x3044000f, Operation::Andi, "andi", 12, 2, 4, 0x000f, 15},
+        {0x33ffffff, Operation::Andi, "andi", 12, 31, 31, 0xffff, -1},
+        {0x3484fff0, Operation::Ori, "ori", 13, 4, 4, 0xfff0, -16},
+        {0x34028000, Operation::Ori, "ori", 13, 0, 2, 0x8000, -32768},
         {0x25280001, Operation::Addiu, "addiu", 9, 9, 8, 0x0001, 1},
         {0x27bdfff0, Operation::Addiu, "addiu", 9, 29, 29, 0xfff0, -16},
         {0x2408ffff, Operation::Addiu, "addiu", 9, 0, 8, 0xffff, -1},
@@ -112,7 +116,7 @@ int main() {
     // Outside the implemented subset, plus nonzero fixed fields. Unsupported
     // is our policy; it makes no claim about a hardware reserved-instruction trap.
     const std::uint32_t unsupported[] = {
-        0xffffffff, 0x70000000, 0x46000000, 0x34081234, 0x0000000c,
+        0xffffffff, 0x70000000, 0x46000000, 0x38081234, 0x0000000c,
         0x00294100, 0x00294102, 0x03e10008, 0x03e00808, 0x03e00048,
         0x012a4061, 0x012a4063, 0x012a4064, 0x012a4065, 0x012a4066,
         0x3c281234,
@@ -131,6 +135,6 @@ int main() {
     if (failures != 0) {
         return 1;
     }
-    std::cout << "33 hand-selected instructions, 16 unsupported encodings, endian checks passed\n";
+    std::cout << "37 hand-selected instructions, 16 unsupported encodings, endian checks passed\n";
     return 0;
 }
